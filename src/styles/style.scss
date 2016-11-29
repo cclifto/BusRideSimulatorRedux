@@ -1,10 +1,63 @@
 * {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: monospace, Arial, sans-serif;
 	box-sizing: border-box;
+	color: lime;
+	background-color: black;
 }
 
-h1 {
-	font-size: 300px;
-	text-align: center;
-	color: fuchsia;
+div .main-container{
+	height: 100%;
+	width: 100%;
+	border: 1px solid lime;
+	display: flex;
+}
+
+div .textbox{
+	height: 100%;
+	width: 20%;
+	border: 1px solid lime;
+	padding-left: 7px;
+}
+
+div .game-container{
+	height: 100%;
+    width: 80%;
+    border: 1px solid lime;
+    display: flex;
+}
+
+div .option-box{
+	height: 100%;
+	width: 40%;
+}
+
+div .option{
+    font-size: small;
+    width: 25%;
+    border: 1px solid lime;
+    margin: 15px 6px;
+    padding: 7px;
+    text-align: center;
+}
+
+div .status-container{
+	float: right;
+    margin-left: auto;
+}
+
+div .stats{
+    border: 2px solid lime;
+    margin-bottom: 10px;
+    border-right: none;
+    margin-top: -2px;
+    padding-left: 7px;
+    text-align: center;
+}
+
+div .inventory{
+    border: 2px solid lime;
+    border-right: none;
+    margin-bottom: -2px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
