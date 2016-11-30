@@ -1,8 +1,13 @@
 * {
-	font-family: monospace, Arial, sans-serif;
+	font-family: Andale Mono, monospace, Arial;
 	box-sizing: border-box;
 	color: lime;
 	background-color: black;
+}
+
+div .body{
+    height: 100%;
+    width: 100%;
 }
 
 div .main-container{
@@ -15,7 +20,6 @@ div .main-container{
 div .textbox{
 	height: 100%;
 	width: 20%;
-	border: 1px solid lime;
 	padding-left: 7px;
 }
 
@@ -24,6 +28,8 @@ div .game-container{
     width: 80%;
     border: 1px solid lime;
     display: flex;
+    border-top: none;
+    border-bottom: none;
 }
 
 div .option-box{
@@ -32,6 +38,15 @@ div .option-box{
 }
 
 div .option{
+    font-size: small;
+    width: 25%;
+    border: 1px solid lime;
+    margin: 15px 6px;
+    padding: 7px;
+    text-align: center;
+}
+
+button{
     font-size: small;
     width: 25%;
     border: 1px solid lime;
@@ -49,15 +64,16 @@ div .stats{
     border: 2px solid lime;
     margin-bottom: 10px;
     border-right: none;
-    margin-top: -2px;
+    margin-top: -1px;
     padding-left: 7px;
+    padding-right: 7px;
     text-align: center;
 }
 
 div .inventory{
     border: 2px solid lime;
     border-right: none;
-    margin-bottom: -2px;
+    margin-bottom: -1px;
     padding-left: 7px;
     padding-right: 7px;
 }

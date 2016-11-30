@@ -4,7 +4,10 @@ var Footer = React.createClass({
 	render: function(){
 		return (
 			<footer>
-				<p>Bus Ride Simulator Redux by Conner Clifton</p>
+				<nav>
+				<p>Bus Ride Simulator 2 by Conner Clifton</p>
+				<p>github</p>
+				</nav>
 			</footer>
 			)
 	}
