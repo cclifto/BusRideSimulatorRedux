@@ -37,22 +37,19 @@ div .option-box{
 	width: 40%;
 }
 
-div .option{
-    font-size: small;
-    width: 25%;
-    border: 1px solid lime;
-    margin: 15px 6px;
-    padding: 7px;
-    text-align: center;
-}
-
 button{
     font-size: small;
     width: 25%;
     border: 1px solid lime;
     margin: 15px 6px;
     padding: 7px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+
+button:focus{
+    outline: none;
 }
 
 div .status-container{
@@ -64,6 +61,7 @@ div .stats{
     border: 2px solid lime;
     margin-bottom: 10px;
     border-right: none;
+    border-top: 1px solid lime;
     margin-top: -1px;
     padding-left: 7px;
     padding-right: 7px;
@@ -73,7 +71,29 @@ div .stats{
 div .inventory{
     border: 2px solid lime;
     border-right: none;
+    border-bottom-width: 1px;
     margin-bottom: -1px;
     padding-left: 7px;
     padding-right: 7px;
+}
+
+.hidden{
+    display: none;
+}
+
+div .event-box {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.8);
+    left: 0;
+    top: 0;
+}
+
+div .event-content {
+    width: 40%;
+    margin: 20% auto;
+    border: 1px solid lime;
+    padding: 2rem;
+    box-shadow: 0 0 100px crimson;
 }

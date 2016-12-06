@@ -1,4 +1,4 @@
-var stats = {
+var Stats = {
 	attack: 4,
 	defense: 5,
 	intelligence: 4,
@@ -7,4 +7,4 @@ var stats = {
 	miles_traveled: 0
 }
 
-export default stats
+export default Stats

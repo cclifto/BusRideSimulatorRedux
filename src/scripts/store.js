@@ -1,16 +1,19 @@
 import Backbone from 'backbone'
 import _ from 'underscore'
-import stats from './stats'
+import Stats from './stats'
 
 
 const STORE = _.extend(Backbone.Events,{
 	_data: {
-		attack: stats.attack,
-		defense: stats.defense,
-		intelligence: stats.intelligence,
-		speed: stats.speed,
-		love: stats.love,
-		miles_traveled: stats.miles_traveled
+		attack: Stats.attack,
+		defense: Stats.defense,
+		intelligence: Stats.intelligence,
+		speed: Stats.speed,
+		love: Stats.love,
+		miles_traveled: Stats.miles_traveled,
+		event_display_text: "",
+		event_choices:[],
+		event_showing: false
 	},
 	_getData: function() {
 		return this._data
@@ -26,5 +29,7 @@ const STORE = _.extend(Backbone.Events,{
 		this._emitChange()
 	}
 })
+
+window.STORE = STORE
 
 export default STORE
