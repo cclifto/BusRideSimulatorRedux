@@ -11,45 +11,31 @@ div .body{
 }
 
 div .main-container{
-	height: 100%;
 	width: 100%;
 	border: 1px solid lime;
 	display: flex;
+    z-index: -1;
 }
 
-div .textbox{
-	height: 100%;
-	width: 20%;
-	padding-left: 7px;
+div.text-box, .game-container, .status-container{
+    display: inline-block;
 }
 
-div .game-container{
-	height: 100%;
-    width: 80%;
+div.game-container{
     border: 1px solid lime;
-    display: flex;
     border-top: none;
     border-bottom: none;
+    flex: 2;
+    padding: 1rem;
 }
 
-div .option-box{
-	height: 100%;
-	width: 40%;
+div.text-box{
+    flex: 1;
+    padding: 1rem;      
 }
 
-button{
-    font-size: small;
-    width: 25%;
-    border: 1px solid lime;
-    margin: 15px 6px;
-    padding: 7px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-button:focus{
-    outline: none;
+div.status-container {
+    flex: 1;
 }
 
 div .status-container{
@@ -96,4 +82,55 @@ div .event-content {
     border: 1px solid lime;
     padding: 2rem;
     box-shadow: 0 0 100px crimson;
+}
+
+.event-content button{
+    position: relative;
+    z-index: 1;
+}
+
+// STATS ANIMATIONS
+@keyframes increment{
+    from {background-color: black;
+            color:lime;}
+    to {background-color: lime;
+        color: black;}
+}
+
+.stats p {
+    width: 100%;
+    animation-name: increment;
+    animation-duration: 1s;
+}
+
+// BUTTON ANIMATIONS
+
+
+button {
+  text-align: center;
+  width: 40%;
+  position: relative;
+  background: none;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  display: block;
+  border: 1px solid lime;
+}
+
+button.disabled {
+    color: darken(lime,20)
+}
+
+button:focus {
+  outline: none;
+}
+
+div.cooldown {
+  position: absolute;
+  background: #164316;
+  top:0;
+  left:0;
+  width:0%;
+  height: 100%;
+  opacity: .5;
 }

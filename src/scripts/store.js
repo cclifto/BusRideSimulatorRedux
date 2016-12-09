@@ -1,16 +1,15 @@
 import Backbone from 'backbone'
 import _ from 'underscore'
-import Stats from './stats'
 
 
 const STORE = _.extend(Backbone.Events,{
 	_data: {
-		attack: Stats.attack,
-		defense: Stats.defense,
-		intelligence: Stats.intelligence,
-		speed: Stats.speed,
-		love: Stats.love,
-		miles_traveled: Stats.miles_traveled,
+		ATK: 4,
+		DEF: 5,
+		INT: 4,
+		SPD: 3,
+		LUV: 1,
+		'Miles Traveled': 0,
 		event_display_text: "",
 		event_choices:[],
 		event_showing: false

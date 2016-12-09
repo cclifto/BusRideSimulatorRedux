@@ -1,9 +1,11 @@
 import React from "react"
 import Footer from './footer'
 import STORE from '../store'
-import stats from '../stats'
 import ACTIONS from '../actions'
 import Events from './events'
+import Button from "./button"
+import Stat from "./stat"
+
 
 
 var AppView = React.createClass({	
@@ -25,40 +27,45 @@ var AppView = React.createClass({
 		return (
 			<div className="body">
 				<div className="main-container">
-					<div className="textbox">
+					<div className="text-box">
 						<p>You have taken your seat on the bus. You've got a long road ahead of you.</p>
 					</div>
 					<div className="game-container">
-						<Events choices={this.state.event_choices} display_text={this.state.event_display_text} showing={this.state.event_showing} />
 						<div className="option-box">
-							<button onClick={ACTIONS._readBook}>Read Book</button>
-							<button onClick={ACTIONS._talkToNeighbor}>Talk to Neighbor</button>
-							<button onClick={ACTIONS._exercise}>Work Out</button>
-							<button onClick={ACTIONS._doNothing}>Do Nothing</button>
-						</div>
-						<div className="status-container">
-							<div className="stats">
-								<p>ATK: {this.state.attack}</p>
-								<p>DEF: {this.state.defense}</p>
-								<p>INT: {this.state.intelligence}</p>
-								<p>SPD: {this.state.speed}</p>
-								<p>LUV: {this.state.love}</p>
-								<p>Miles Traveled: {this.state.miles_traveled}</p>
-							</div>
-							<div className="inventory">
-								<p>Book</p>
-								<p>Lunch</p>
-								<p>Wrench</p>
-								<p>Exercise Trainer</p>
-							</div>
+							<Button cooldownTime={2000} text={'Read Book'} action={ACTIONS._readBook} />
+							<Button cooldownTime={3000} text={'Talk To Neighbor'} action={ACTIONS._talkToNeighbor} />
+							<Button cooldownTime={4000} text={'Work Out'} action={ACTIONS._exercise} />
+							<Button cooldownTime={1000} text={'Do Nothing'} action={ACTIONS._doNothing} />
 						</div>
 					</div>
+					<Status {...this.state} />
 				</div>
 				<Footer />
+				<Events choices={this.state.event_choices} display_text={this.state.event_display_text} showing={this.state.event_showing} />
 			</div>
 		)
 	}
 })
 
+const Status = React.createClass({
+
+	render: function(){
+		var stats = ['ATK','DEF','INT','LUV', 'Miles Traveled']
+		var statComponents = stats.map(statStr => <Stat statVal={this.props[statStr]} statName={statStr} className={statStr}/>)
+		return(
+			<div className="status-container">
+				<div className="stats">
+					{statComponents}
+				</div>
+				<div className="inventory">
+					<p>Book</p>
+					<p>Lunch</p>
+					<p>Wrench</p>
+					<p>Exercise Trainer</p>
+				</div>
+			</div>
+		)
+	}
+})
 
 export default AppView
