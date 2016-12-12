@@ -8,7 +8,7 @@ var Events = React.createClass({
 		var choiceObjs = this.props.choices
 		var buttsArray = []
 		for(var i = 0; i < choiceObjs.length; i++){
-			buttsArray.push(<button value={choiceObjs[i].buttonValue}>{choiceObjs[i].buttonText}</button>)
+			buttsArray.push(<button onClick={choiceObjs[i].callback} value={choiceObjs[i].buttonValue}>{choiceObjs[i].buttonText}</button>)
 		}
 		return buttsArray
 	},
@@ -23,7 +23,6 @@ var Events = React.createClass({
 				<div className="event-content">	
 					<p>{this.props.display_text}</p>
 					{this._getButtonsArray()}
-					
 				</div>
 			</div>
 		)

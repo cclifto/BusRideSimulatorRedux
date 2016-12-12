@@ -6,7 +6,9 @@ import Events from './events'
 import Button from "./button"
 import Stat from "./stat"
 
-
+Array.prototype.includes = function(el) {
+	return this.indexOf(el) !== -1
+}
 
 var AppView = React.createClass({	
 
@@ -41,7 +43,11 @@ var AppView = React.createClass({
 					<Status {...this.state} />
 				</div>
 				<Footer />
-				<Events choices={this.state.event_choices} display_text={this.state.event_display_text} showing={this.state.event_showing} />
+				<Events 
+					choices={this.state.event_choices} 
+					display_text={this.state.event_display_text} 
+					showing={this.state.event_showing} 
+					/>
 			</div>
 		)
 	}
@@ -51,7 +57,7 @@ const Status = React.createClass({
 
 	render: function(){
 		var stats = ['ATK','DEF','INT','LUV', 'Miles Traveled']
-		var statComponents = stats.map(statStr => <Stat statVal={this.props[statStr]} statName={statStr} className={statStr}/>)
+		var statComponents = stats.map(statStr => <Stat statVal={this.props[statStr]} statName={statStr} />)
 		return(
 			<div className="status-container">
 				<div className="stats">

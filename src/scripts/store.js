@@ -11,8 +11,10 @@ const STORE = _.extend(Backbone.Events,{
 		LUV: 1,
 		'Miles Traveled': 0,
 		event_display_text: "",
+		event_callback: null,
 		event_choices:[],
-		event_showing: false
+		event_showing: false,
+		flashingStats: []
 	},
 	_getData: function() {
 		return this._data
